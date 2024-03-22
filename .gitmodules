@@ -1,0 +1,4 @@
+[submodule "1.20.4"]
+	path = 1.20.4
+	url = https://github.com/skinbookmc/mod.git
+	branch = 1.20.4
