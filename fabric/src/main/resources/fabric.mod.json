@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "skinbook",
+  "version": "${version}",
+  "name": "skinbook",
+  "description": "Integration for analytics on SkinBook ",
+  "authors": [
+    "SkinBook Developers"
+  ],
+  "contact": {
+    "repo": "https://github.com/skinbookmc/mod"
+  },
+  "license": "GPL-3.0",
+  "icon": "assets/skinbook/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "com.skinbook.skinbook.client.SkinbookClient"
+    ],
+    "main": [
+      "com.skinbook.skinbook.Skinbook"
+    ]
+  },
+  "mixins": [
+    "skinbook.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}

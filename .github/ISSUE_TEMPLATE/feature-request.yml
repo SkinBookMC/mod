@@ -1,0 +1,22 @@
+name: "Feature Request"
+description: "To propose an enhancement"
+title: "[Feature Request]: "
+labels: enhancement
+body:
+  - type: checkboxes
+    id: selfservice
+    attributes:
+      label: Self-service
+      description: "To make thing easier on others, if you wish, you may implement your own feature into our code using a pull request"
+      options:
+        - label: "I'd be willing to implement it myself"
+
+  - type: textarea
+    attributes:
+      label: Describe your idea
+      description: |
+        Provide a clear and concise description of your idea so we have a good idea what you want
+      placeholder: |
+        ex: I have always thought a... would be a great implementation because...
+    validations:
+      required: true
