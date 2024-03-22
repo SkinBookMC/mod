@@ -1,0 +1,32 @@
+name: Update Submodules
+
+on:
+  push:
+    branches-ignore:
+      - master
+
+jobs:
+  update-submodules:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout main repository
+        uses: actions/checkout@v2
+        
+      - name: Update submodules
+        run: |
+          git submodule update --remote --recursive
+          
+      - name: Set user name and email
+        run: |
+          git config user.name "${{ github.event.head_commit.author.name }}"
+          git config user.email "${{ github.event.head_commit.author.email }}"
+          
+      - name: Commit changes
+        run: |
+          git commit -am "Update submodules"
+          
+      - name: Push changes
+        uses: ad-m/github-push-action@v0.7.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
